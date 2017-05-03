@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel : UILabel!
     @IBOutlet weak var levelLabel : UILabel!
     
+    var snake : Snake!
+    var food : UIImageView!
+    var isGameOver : Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()

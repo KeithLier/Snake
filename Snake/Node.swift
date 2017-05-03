@@ -9,5 +9,12 @@
 import UIKit
 
 class Node: NSObject {
-
+    
+    var coordinate: CGPoint!
+    
+    class func nodeWithCoordinate(coordinate:CGPoint) ->Node {
+        let node = Node()
+        node.coordinate = coordinate
+        return node
+    }
 }
