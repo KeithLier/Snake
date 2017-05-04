@@ -34,11 +34,12 @@ class Snake: NSObject {
     
     func initBody() {
         nodes = NSMutableArray()
+        speed = 0
         for i in 1...4 {
             let point:CGPoint! = CGPoint(x: 10*i+5, y: 5)
             nodes.add(Node.nodeWithCoordinate(coordinate: point))
         }
-        direction = SnakeDirection.right
+        direction = SnakeDirection.down
     }
     
     func levelUpWithSpeed(s:NSInteger) {
@@ -74,16 +75,33 @@ class Snake: NSObject {
         lastPoint = node.coordinate
         let c : Node! = nodes.firstObject as! Node
         var center : CGPoint! = c.coordinate
-        if direction == SnakeDirection.up || direction == SnakeDirection.left {
+        if direction == SnakeDirection.up  {
             center.y -= 10;
         }
-        if direction == SnakeDirection.down || direction == SnakeDirection.right {
+        if direction == SnakeDirection.left {
+            center.x -= 10;
+        }
+        if direction == SnakeDirection.down {
             center.y += 10;
+        }
+        if direction == SnakeDirection.right {
+            center.x += 10;
         }
         node.coordinate = center
         nodes.remove(node)
         nodes.insert(node, at: 0)
         
         moveFinishBlock()
+    }
+    
+    func setMoveDirection(dir:SnakeDirection!) {
+        if dir == SnakeDirection.down || dir == SnakeDirection.up {
+            if direction == SnakeDirection.down || direction == SnakeDirection.up {
+                return
+            }
+        } else if direction == SnakeDirection.left || direction == SnakeDirection.right {
+            return
+        }
+        direction = dir
     }
 }

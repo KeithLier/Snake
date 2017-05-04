@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         food = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         food.image = UIImage(named: "star")
         gameView.addSubview(food)
-        
+        isGameOver = false
         snake = Snake().snake()
         snake.moveFinishBlock = {
             self.isEatedFood()
@@ -108,16 +108,20 @@ class ViewController: UIViewController {
     @IBAction func directionClick(_ sender: UIButton!) {
         if startButton.isSelected {
             if sender.tag == 0 {
-                snake.direction = SnakeDirection.up;
+//                snake.direction = SnakeDirection.up;
+                snake.setMoveDirection(dir: SnakeDirection.up)
             }
             if sender.tag == 1 {
-                snake.direction = SnakeDirection.left;
+//                snake.direction = SnakeDirection.left;
+                snake.setMoveDirection(dir: SnakeDirection.left)
             }
             if sender.tag == 2 {
-                snake.direction = SnakeDirection.down;
+//                snake.direction = SnakeDirection.down;
+                snake.setMoveDirection(dir: SnakeDirection.down)
             }
             if sender.tag == 3 {
-                snake.direction = SnakeDirection.right;
+//                snake.direction = SnakeDirection.right;
+                snake.setMoveDirection(dir: SnakeDirection.right)
             }
         }
     }
