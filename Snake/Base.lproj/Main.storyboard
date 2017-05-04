@@ -83,7 +83,7 @@
                                             <action selector="directionClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VIb-n6-V22"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5B-DO-lXd">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5B-DO-lXd">
                                         <rect key="frame" x="216" y="58" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GJg-g5-3E3"/>
@@ -92,7 +92,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="→"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-4a-ZCl">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-4a-ZCl">
                                         <rect key="frame" x="163" y="112" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PkK-2i-WEo"/>
@@ -101,7 +101,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="↓"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-YR-rYR">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-YR-rYR">
                                         <rect key="frame" x="109" y="58" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="21h-LJ-EFG"/>
@@ -117,6 +117,10 @@
                                             <constraint firstAttribute="height" constant="50" id="rdQ-Eg-duo"/>
                                         </constraints>
                                         <state key="normal" title="开始"/>
+                                        <state key="selected" title="暂停"/>
+                                        <connections>
+                                            <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Xl-Bv-H7J"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

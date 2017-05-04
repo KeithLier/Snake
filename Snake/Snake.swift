@@ -16,12 +16,15 @@ enum SnakeDirection {
     case right
 }
 
+typealias moveFinishBlock = () -> ()
+
 class Snake: NSObject {
     var nodes : NSMutableArray!
-    var direction : SnakeDirection!
+    var direction : SnakeDirection!  
     var timer : Timer!
     var speed : NSInteger!
     var lastPoint : CGPoint!
+    var moveFinishBlock : moveFinishBlock!
     
     func snake() -> Snake {
         let snake = Snake()
@@ -30,7 +33,7 @@ class Snake: NSObject {
     }
     
     func initBody() {
-        nodes.removeAllObjects()
+        nodes = NSMutableArray()
         for i in 1...4 {
             let point:CGPoint! = CGPoint(x: 10*i+5, y: 5)
             nodes.add(Node.nodeWithCoordinate(coordinate: point))
@@ -80,5 +83,7 @@ class Snake: NSObject {
         node.coordinate = center
         nodes.remove(node)
         nodes.insert(node, at: 0)
+        
+        moveFinishBlock()
     }
 }
